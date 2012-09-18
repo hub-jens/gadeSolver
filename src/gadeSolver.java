@@ -53,6 +53,9 @@ public class gadeSolver {
 	private static int calc_dist(String c1, String c2) {
 		double n1, n2, e1, e2, nd, ed, d;
 		
+		
+		// More comments.
+		
 		n1 = Float.parseFloat(c1.substring(4,10));
 		e1 = Float.parseFloat(c1.substring(16,22));
 		n2 = Float.parseFloat(c2.substring(4,10));
