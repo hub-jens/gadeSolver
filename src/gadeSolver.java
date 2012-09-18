@@ -62,6 +62,8 @@ public class gadeSolver {
 		ed = (e2-e1) * 1044.796791;
 		d = Math.sqrt(nd*nd + ed * ed);
 		
+		// I think distance is wrong
+		
 		//System.out.println(c1 + " " + c2 + ": " + d);
 		return (int)d;
 	}
