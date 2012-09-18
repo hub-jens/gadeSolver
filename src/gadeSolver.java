@@ -43,6 +43,8 @@ import java.util.Iterator;
 // 1044.796791 m per E minut
 // Derefter sqrt(diff^2 + diff^2)
 
+// Master change
+
 public class gadeSolver {
 	// Calculate the distance in meters between two coordinate strings.
 	// Coordinate strings are assumed to have the format 
