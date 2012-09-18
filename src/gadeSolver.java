@@ -59,7 +59,7 @@ public class gadeSolver {
 		e2 = Float.parseFloat(c2.substring(16,22));
 		
 		// TODO: this is not good enough.... needs adjustment...
-		// This is on a branch
+		// This is on a branch - v2
 		nd = (n2-n1) * 1855.639001;
 		ed = (e2-e1) * 1044.796791;
 		d = Math.sqrt(nd*nd + ed * ed);
