@@ -3,6 +3,12 @@ import java.util.Iterator;
 
 // examples
 
+// barndommens gade
+// -t "N55 4j.e3k E012 2d.2fb" -k 11 11 -c "N55 46.500 E012 22.250" -cd 500 -v a 0 -v b 1 -kml
+// -t "N55 4j.e3k E012 2d.2fb" -k 11 11 -c "N55 46.500 E012 22.250" -cd 500 -v a 0 -v b 1 -v j 6 -v d 2
+
+
+
 // Anytime Gade
 // -d 554ajfh 6 -d 123bbcg 7 -k 1 15 -t "N55 4a.jfh E012 3b.bcg" -v a 0123 -v b 123456 -u abcfghj
 // do med distance
@@ -382,6 +388,7 @@ public class gadeSolver {
         	if (print_no_gades)
         		System.out.println("For k=" + k + " there are " + no_gades + " possible gades.");
         }
+        
         
         int sol=1;
         int dist=0;
