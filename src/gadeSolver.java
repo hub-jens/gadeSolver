@@ -53,6 +53,10 @@ import java.util.Iterator;
 // -t "N55 4e.jfc E012 2f.eih" -k 2 4 -c "N55 42.951 E012 24.167" -cd 3000
 // -t "N55 4e.jfc E012 2f.eih" -k 2 4 -c "N55 42.951 E012 24.167" -cd 3000 -kml
 
+// Veje til Hillerød
+// -t "N55 oo.dth E012 bs.pql" -k 20 20 -c "N55 53.668 E012 22.157" -cd 4000 -v a 0 -v b 1 -v i 3 -v t 9 -v s 9 -v j 3 -v c 1 -v r 9 -in 3 5 9 -in 9 2 5 -in 4 2 5 -in 8 2 5 -in 2 2 5 -in 1 1 5
+
+
 public class gadeSolver {
 	// Calculate the distance in meters between two coordinate strings.
 	// Coordinate strings are assumed to have the format 
@@ -128,7 +132,8 @@ public class gadeSolver {
 			String[] d_check_str, int[] d_check_value, 
 			int v_checks, char[] v_check, String[] v_check_str, 
 			int u_checks, String[] u_check_str,
-			String d_present, String d_not_present) {
+			String d_present, String d_not_present,
+			int in_checks, int []in_check, int[] in_check_min, int[] in_check_max) {
 		// First let's count the number of digit instances 0...k-1...
 		int[] digit_count = new int[10];
 		for (int i=0; i<10; i++)
@@ -200,6 +205,15 @@ public class gadeSolver {
 			}
 		}
 		
+		// Check digit instance ranges
+		for (int ic = 0; ic<in_checks; ic++) {
+			int v = in_check[ic];
+			if ((in_check_min[ic] > digit_count[v]) ||
+				(in_check_max[ic] < digit_count[v]))
+				return false;
+
+		}
+				
 		return true;
 	}
 
@@ -278,6 +292,7 @@ public class gadeSolver {
 		// -kml
 		
 		// TBD: Need to be able to describe a minimum and maximum instances of a given digit (before k)
+		// -in, e.g. -in 3 2 4   (3 must be present between 2 and 4 times before k)
 		
 		
         int i=0, k_min=0, k_max=0, k, min_digits;
@@ -299,6 +314,11 @@ public class gadeSolver {
         
         int u_checks = 0;
         String[] u_check_str = new String[10];
+        
+        int in_checks = 0;
+        int[] in_check = new int[10];
+        int[] in_check_min = new int[10];
+        int[] in_check_max = new int[10];
 
         String d_present = "";
         String d_not_present = "";
@@ -344,6 +364,11 @@ public class gadeSolver {
             } else if (arg.equals("-kml")) {
             	kml = true;
             	i++;
+            } else if (arg.equals("-in")) {
+            	in_check[in_checks] = Integer.parseInt(args[i++]);
+            	in_check_min[in_checks] = Integer.parseInt(args[i++]);
+            	in_check_max[in_checks] = Integer.parseInt(args[i++]);
+            	in_checks++;
             } else {
             	System.out.println("gadeSolver -k k_min k_max {-d root_string root_value} [-t template]");
             	System.exit(1);
@@ -376,7 +401,8 @@ public class gadeSolver {
         			no_gades++;
         			
         			if ((digits >= min_digits) && check(k, d_value, digits, d_checks, d_check_str, d_check_value, 
-        					v_checks, v_check, v_check_str, u_checks, u_check_str, d_present, d_not_present))
+        					v_checks, v_check, v_check_str, u_checks, u_check_str, d_present, d_not_present,
+        					in_checks, in_check, in_check_min, in_check_max))
         				solutions.add(new String(output(d_value, digits, template)));
         			
         			// now, backtrack, and restart 
