@@ -49,6 +49,10 @@ import java.util.Iterator;
 // 1044.796791 m per E minut
 // Derefter sqrt(diff^2 + diff^2)
 
+// (M3+) Visiting Eiffel & Jet-d'eau
+// -t "N55 4e.jfc E012 2f.eih" -k 2 4 -c "N55 42.951 E012 24.167" -cd 3000
+// -t "N55 4e.jfc E012 2f.eih" -k 2 4 -c "N55 42.951 E012 24.167" -cd 3000 -kml
+
 public class gadeSolver {
 	// Calculate the distance in meters between two coordinate strings.
 	// Coordinate strings are assumed to have the format 
@@ -272,6 +276,9 @@ public class gadeSolver {
 		// -cd 600
 		
 		// -kml
+		
+		// TBD: Need to be able to describe a minimum and maximum instances of a given digit (before k)
+		
 		
         int i=0, k_min=0, k_max=0, k, min_digits;
         String arg;
