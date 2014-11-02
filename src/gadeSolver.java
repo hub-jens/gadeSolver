@@ -57,6 +57,8 @@ import java.util.Iterator;
 // -t "N55 oo.dth E012 bs.pql" -k 20 20 -c "N55 53.668 E012 22.157" -cd 5000 -v a 0 -v b 1 -v i 3 -v t 9 -v s 9 -v j 3 -v c 1 -v r 9 -in 3 5 9 -in 9 2 5 -in 4 2 5 -in 8 2 5 -in 2 2 5 -in 1 1 5
 // baseret på at følgende cifre var indsamlet og at der manglede et 4 cifret årstal: 334 28 29 3 4 30 389 31
 
+// Asterix 10
+// -t "N55 4s.nkq E012 2e.obr" -k 10 11 -c "N55 49.520 E012 21.320" -cd 3000 -nn
 
 public class gadeSolver {
 	// Calculate the distance in meters between two coordinate strings.
