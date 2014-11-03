@@ -58,16 +58,16 @@ import java.util.Iterator;
 // baseret på at følgende cifre var indsamlet og at der manglede et 4 cifret årstal: 334 28 29 3 4 30 389 31
 
 // Asterix 10
-// -t "N55 4s.nkq E012 2e.obr" -k 10 11 -c "N55 49.520 E012 21.320" -cd 3000 -nn
+// -t "N55 4s.nkq E012 2d.obr" -k 10 11 -c "N55 49.520 E012 21.320" -cd 3000 -nn
 // N55° 49.247 E12° 21.102
-// -t "N55 4s.nkq E012 2e.obr" -k 13 25 -v s 9 -v n 2 -v n 2 -v e 1 -v o 0
+// -t "N55 4s.nkq E012 2d.obr" -k 13 25 -v s 9 -v n 2 -v n 2 -v e 1 -v o 0
 // N55 48.345 E12 20.040  - not possible
-// -t "N55 4s.nkq E012 2e.obr" -k 13 25 -v s 8 -v n 3 -v e 0 -v 
+// -t "N55 4s.nkq E012 2d.obr" -k 13 25 -v s 8 -v n 3 -v e 0 -v 
 // N55 48.915 E12 21.363
-// -t "N55 4s.nkq E012 2e.obr" -k 10 25 -v s 8 -v n 9 -v e 1 -v o 3
-// -t "N55 4s.nkq E012 2e.obr" -k 10 25 -c "N55 49.520 E012 21.320" -cd 1000
+// -t "N55 4s.nkq E012 2d.obr" -k 10 25 -v s 8 -v n 9 -v e 1 -v o 3
+// -t "N55 4s.nkq E012 2d.obr" -k 10 25 -c "N55 49.520 E012 21.320" -cd 1000
 // Hvis vi nu antager 24 album sammen, så kan 2 eller 4 ikke optræde sent. 
-// -t "N55 4s.nkq E012 2e.obr" -k 13 25 -c "N55 49.520 E012 21.320" -cd 3000 -v q 01356789 -v s 01356789
+// -t "N55 4s.nkq E012 2d.obr" -k 13 25 -c "N55 49.520 E012 21.320" -cd 3000 -y 737324 -nn
 
 
 public class gadeSolver {
